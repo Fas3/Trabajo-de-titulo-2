@@ -119,15 +119,15 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-start;
       min-height: calc(100vh - 56px);
-      padding: 48px 24px;
+      padding: 32px 24px;
       padding-bottom: 80px;
     }
 
     .hero {
       text-align: center;
-      margin-bottom: 48px;
+      margin-bottom: 32px;
     }
 
     .hero-title {
@@ -154,10 +154,10 @@
     /* ─── CARDS ─── */
     .cards {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(4, 1fr);
       gap: 20px;
       width: 100%;
-      max-width: 900px;
+      max-width: 1320px;
       margin-bottom: 40px;
     }
 
@@ -408,7 +408,7 @@
 
     async function checkConnection() {
       try {
-        const response = await fetch('datos.htm', { cache: "no-store" });
+        const response = await fetch('Datos.htm', { cache: "no-store" });
         if (!response.ok) throw new Error("PLC offline");
         const vals = await response.json();
 
