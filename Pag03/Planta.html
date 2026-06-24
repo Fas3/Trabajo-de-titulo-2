@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<!-- AWP_In_Variable Name='"Bomba_Velocidad"' -->
-<!-- AWP_In_Variable Name='"EV_01_Apertura"' -->
+<!-- AWP_In_Variable Name='"Tag_45"' -->
+<!-- AWP_In_Variable Name='"Tag_16"' -->
+<!-- AWP_In_Variable Name='"Latido"' -->
+<!-- AWP_In_Variable Name='"Control Remoto"' -->
 <html lang="es">
 <head>
 <meta charset="UTF-8">
@@ -63,22 +65,8 @@
     background: rgba(0,212,255,0.06);
   }
 
-  .logo-text {
-    font-size: 18px;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    color: #ffffff;
-    text-transform: uppercase;
-  }
-
-  .logo-sub {
-    font-size: 11px;
-    color: var(--muted);
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    margin-top: 1px;
-  }
-
+  .logo-text { font-size: 18px; font-weight: 600; letter-spacing: 0.08em; color: #ffffff; text-transform: uppercase; }
+  .logo-sub { font-size: 11px; color: var(--muted); letter-spacing: 0.12em; text-transform: uppercase; margin-top: 1px; }
   .header-right { display: flex; align-items: center; gap: 16px; }
 
   .status-pill {
@@ -107,188 +95,60 @@
   .ucm-logo-img { height: 34px; width: auto; opacity: 0.85; }
 
   /* ─── LAYOUT ─── */
-  .main {
-    display: grid;
-    grid-template-columns: 220px 1fr 200px;
-    grid-template-rows: 1fr auto;
-    height: calc(100vh - 56px);
-    gap: 0;
-  }
+  .main { display: grid; grid-template-columns: 220px 1fr 200px; grid-template-rows: 1fr auto; height: calc(100vh - 56px); gap: 0; }
 
   /* ─── LEFT SIDEBAR ─── */
-  .sidebar-left {
-    background: var(--panel);
-    border-right: 1px solid var(--border);
-    display: flex; flex-direction: column;
-    overflow-y: auto;
-  }
-
+  .sidebar-left { background: var(--panel); border-right: 1px solid var(--border); display: flex; flex-direction: column; overflow-y: auto; }
   .sidebar-section { padding: 16px; border-bottom: 1px solid var(--border); }
+  .sidebar-title { font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; }
 
-  .sidebar-title {
-    font-size: 10px;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-bottom: 12px;
-  }
-
-  /* Instrument cards */
-  .inst-card {
-    background: var(--panel2);
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    padding: 10px 12px;
-    margin-bottom: 8px;
-    cursor: pointer;
-    transition: border-color 0.15s;
-  }
-
+  .inst-card { background: var(--panel2); border: 1px solid var(--border); border-radius: 6px; padding: 10px 12px; margin-bottom: 8px; cursor: pointer; transition: border-color 0.15s; }
   .inst-card:hover { border-color: var(--accent); }
-
   .inst-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px; }
-
-  .inst-tag {
-    font-family: var(--mono);
-    font-size: 11px;
-    color: var(--accent);
-    background: rgba(0,212,255,0.08);
-    border: 1px solid rgba(0,212,255,0.2);
-    padding: 1px 6px;
-    border-radius: 3px;
-  }
-
+  .inst-tag { font-family: var(--mono); font-size: 11px; color: var(--accent); background: rgba(0,212,255,0.08); border: 1px solid rgba(0,212,255,0.2); padding: 1px 6px; border-radius: 3px; }
   .inst-status { width: 7px; height: 7px; border-radius: 50%; background: var(--accent2); }
   .inst-name { font-size: 12px; color: var(--text); font-weight: 400; margin-bottom: 6px; }
   .inst-value { font-family: var(--mono); font-size: 20px; color: #fff; font-weight: 400; line-height: 1; }
   .inst-unit { font-size: 11px; color: var(--muted); margin-left: 3px; }
-
   .inst-bar { height: 3px; background: var(--border); border-radius: 2px; margin-top: 8px; overflow: hidden; }
   .inst-bar-fill { height: 100%; border-radius: 2px; background: var(--accent2); transition: width 0.8s ease; }
 
   /* ─── DIAGRAM AREA ─── */
-  .diagram-area {
-    background: var(--bg);
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .diagram-toolbar {
-    background: var(--panel);
-    border-bottom: 1px solid var(--border);
-    padding: 8px 20px;
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    flex-shrink: 0;
-  }
-
+  .diagram-area { background: var(--bg); position: relative; overflow: hidden; display: flex; flex-direction: column; }
+  .diagram-toolbar { background: var(--panel); border-bottom: 1px solid var(--border); padding: 8px 20px; display: flex; align-items: center; gap: 16px; flex-shrink: 0; }
   .toolbar-label { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
 
-  .tab-btn {
-    font-family: var(--sans);
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    padding: 4px 14px;
-    border-radius: 4px;
-    border: 1px solid var(--border);
-    background: transparent;
-    color: var(--muted);
-    cursor: pointer;
-    transition: all 0.15s;
-  }
-
-  .tab-btn.active, .tab-btn:hover {
-    background: rgba(0,212,255,0.08);
-    border-color: var(--accent);
-    color: var(--accent);
-  }
+  .tab-btn { font-family: var(--sans); font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; padding: 4px 14px; border-radius: 4px; border: 1px solid var(--border); background: transparent; color: var(--muted); cursor: pointer; transition: all 0.15s; }
+  .tab-btn.active, .tab-btn:hover { background: rgba(0,212,255,0.08); border-color: var(--accent); color: var(--accent); }
 
   .diagram-canvas { flex: 1; display: flex; align-items: center; justify-content: center; padding: 20px; position: relative; }
-
   #pid-svg { width: 100%; max-width: 820px; height: auto; filter: drop-shadow(0 4px 32px rgba(0,0,0,0.6)); }
 
-  .component-tip {
-    position: absolute;
-    background: var(--panel);
-    border: 1px solid var(--accent);
-    border-radius: 6px;
-    padding: 8px 12px;
-    font-size: 12px;
-    color: var(--text);
-    pointer-events: none;
-    opacity: 0;
-    transition: opacity 0.15s;
-    z-index: 50;
-    white-space: nowrap;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
-  }
-
+  .component-tip { position: absolute; background: var(--panel); border: 1px solid var(--accent); border-radius: 6px; padding: 8px 12px; font-size: 12px; color: var(--text); pointer-events: none; opacity: 0; transition: opacity 0.15s; z-index: 50; white-space: nowrap; box-shadow: 0 4px 20px rgba(0,0,0,0.4); }
   .component-tip.show { opacity: 1; }
   .component-tip strong { color: var(--accent); font-family: var(--mono); }
 
   /* ─── RIGHT PANEL ─── */
-  .sidebar-right {
-    background: var(--panel);
-    border-left: 1px solid var(--border);
-    display: flex; flex-direction: column;
-    overflow-y: auto;
-  }
-
+  .sidebar-right { background: var(--panel); border-left: 1px solid var(--border); display: flex; flex-direction: column; overflow-y: auto; }
   .sp-ctrl { padding: 16px; border-bottom: 1px solid var(--border); }
   .sp-label { font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); margin-bottom: 10px; }
   .sp-row { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
   .sp-name { font-size: 12px; color: var(--text); flex: 1; }
-
-  .sp-value {
-    font-family: var(--mono);
-    font-size: 14px;
-    color: var(--accent);
-    background: var(--bg);
-    border: 1px solid var(--border);
-    border-radius: 4px;
-    padding: 3px 8px;
-    width: 64px;
-    text-align: right;
-    outline: none;
-  }
-
+  .sp-value { font-family: var(--mono); font-size: 14px; color: var(--accent); background: var(--bg); border: 1px solid var(--border); border-radius: 4px; padding: 3px 8px; width: 64px; text-align: right; outline: none; }
   .sp-value:focus { border-color: var(--accent); }
 
   .trend-box { padding: 16px; }
   .trend-canvas { width: 100%; height: 80px; background: var(--bg); border: 1px solid var(--border); border-radius: 4px; display: block; }
 
   /* ─── BOTTOM BAR ─── */
-  .bottom-bar {
-    grid-column: 1 / -1;
-    background: var(--panel);
-    border-top: 1px solid var(--border);
-    padding: 0 2rem;
-    height: 44px;
-    display: flex;
-    align-items: center;
-    gap: 32px;
-  }
-
+  .bottom-bar { grid-column: 1 / -1; background: var(--panel); border-top: 1px solid var(--border); padding: 0 2rem; height: 44px; display: flex; align-items: center; gap: 32px; }
   .alarm-item { display: flex; align-items: center; gap: 6px; font-family: var(--mono); font-size: 11px; transition: color 0.3s; }
   .alarm-dot { width: 6px; height: 6px; border-radius: 50%; background: currentColor; transition: background 0.3s; }
 
-  .back-btn {
-    display: inline-flex; align-items: center; gap: 6px; font-family: var(--sans); font-size: 13px; font-weight: 600;
-    letter-spacing: 0.08em; text-transform: uppercase; padding: 6px 14px; border-radius: 5px; border: 1px solid var(--border);
-    background: transparent; color: var(--muted); cursor: pointer; text-decoration: none; transition: all 0.15s;
-  }
+  .back-btn { display: inline-flex; align-items: center; gap: 6px; font-family: var(--sans); font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; padding: 6px 14px; border-radius: 5px; border: 1px solid var(--border); background: transparent; color: var(--muted); cursor: pointer; text-decoration: none; transition: all 0.15s; }
   .back-btn:hover { border-color: var(--accent); color: var(--accent); background: rgba(0,212,255,0.06); }
 
-  .bg-grid {
-    position: absolute; inset: 0; pointer-events: none; opacity: 0.18;
-    background-image: linear-gradient(var(--border) 1px, transparent 1px), linear-gradient(90deg, var(--border) 1px, transparent 1px);
-    background-size: 40px 40px;
-  }
+  .bg-grid { position: absolute; inset: 0; pointer-events: none; opacity: 0.18; background-image: linear-gradient(var(--border) 1px, transparent 1px), linear-gradient(90deg, var(--border) 1px, transparent 1px); background-size: 40px 40px; }
 
   ::-webkit-scrollbar { width: 4px; }
   ::-webkit-scrollbar-track { background: var(--bg); }
@@ -482,10 +342,10 @@
           <polygon points="310,137 310,163 335,150" fill="#131720" stroke="#00d4ff" stroke-width="1.5"/>
           <polygon points="335,137 335,163 310,150" fill="#131720" stroke="#00d4ff" stroke-width="1.5"/>
           <rect x="316" y="117" width="14" height="20" rx="2" fill="#1a2030" stroke="#00d4ff" stroke-width="1"/>
-          <rect x="319" y="109" width="8"  height="9"  rx="1" fill="#ff4444" opacity="0.8" id="ev-indicator"/>
+          <rect x="319" y="109" width="8"  height="9"  rx="1" fill="#00ff9d" opacity="0.8" id="ev-indicator"/>
           <path d="M320 120 Q322 124 324 120 Q326 116 328 120" fill="none" stroke="#00d4ff" stroke-width="1" opacity="0.5"/>
           <text x="322" y="190" text-anchor="middle" font-family="'Barlow Condensed'" font-size="11" fill="#5a6a88">EV-01</text>
-          <text x="322" y="201" text-anchor="middle" font-family="'Share Tech Mono'" font-size="10" fill="#ff4444" id="ev-state-label">0.0 %</text>
+          <text x="322" y="201" text-anchor="middle" font-family="'Share Tech Mono'" font-size="10" fill="#00ff9d" id="ev-state-label">0.0 °</text>
         </g>
 
         <line x1="310" y1="150" x2="218" y2="150" stroke="#3a5a88" stroke-width="3" stroke-linecap="round"/>
@@ -556,18 +416,24 @@
       <div class="sp-label">Actuadores (Escritura manual)</div>
       
       <div class="sp-row">
-        <span class="sp-name">Bomba (VDF) [%]</span>
-        <input class="sp-value" type="number" id="ctrl-bomba" value="0.0" step="1" min="0" max="100">
+        <span class="sp-name">Bomba (VDF) [Hz]</span>
+        <input class="sp-value" type="number" id="ctrl-bomba" value="0.0" step="1" min="0" max="50">
       </div>
       
       <div class="sp-row">
-        <span class="sp-name">Válvula (EV-01) [%]</span>
-        <input class="sp-value" type="number" id="ctrl-valvula" value="0.0" step="1" min="0" max="100">
+        <span class="sp-name">Válvula (EV-01) [°]</span>
+        <input class="sp-value" type="number" id="ctrl-valvula" value="0.0" step="1" min="0" max="90">
       </div>
       
       <div class="sp-row" style="margin-top:8px;">
         <button onclick="enviarComandos()" style="width:100%; background:rgba(0,212,255,0.08); border:1.5px solid var(--accent); color:var(--accent); font-family:var(--mono); font-size:12px; padding:7px; border-radius:4px; cursor:pointer; letter-spacing:0.08em; text-transform:uppercase;">
           ENVIAR A PLC
+        </button>
+      </div>
+      
+      <div class="sp-row" style="margin-top:8px;">
+        <button onclick="toggleModoRemoto()" id="btn-remoto" style="width:100%; background:rgba(255,182,39,0.08); border:1.5px solid var(--warn); color:var(--warn); font-family:var(--mono); font-size:12px; padding:7px; border-radius:4px; cursor:pointer; letter-spacing:0.08em; text-transform:uppercase; transition: all 0.3s;">
+          TOMAR CONTROL REMOTO
         </button>
       </div>
     </div>
@@ -676,15 +542,17 @@ function enviarComandos() {
   let vdf = parseFloat(document.getElementById('ctrl-bomba').value);
   let ev = parseFloat(document.getElementById('ctrl-valvula').value);
   
-  if (vdf < 0) vdf = 0; if (vdf > 100) vdf = 100;
-  if (ev < 0) ev = 0; if (ev > 100) ev = 100;
+  if (vdf < 0) vdf = 0; if (vdf > 50) vdf = 50;
+  if (ev < 0) ev = 0; if (ev > 90) ev = 90;
   
   vdf = vdf.toFixed(1);
   ev = ev.toFixed(1);
 
   // --- Actualización Visual Válvula ---
-  document.getElementById('ev-state-label').textContent = ev + ' %';
-  const colorEstadoEV = ev > 0 ? '#00ff9d' : '#ff4444';
+  document.getElementById('ev-state-label').textContent = ev + ' °';
+  
+  // 0 es abierta (verde), 90 es cerrada (rojo)
+  const colorEstadoEV = ev < 90 ? '#00ff9d' : '#ff4444';
   document.getElementById('ev-state-label').style.fill = colorEstadoEV;
   document.getElementById('ev-indicator').style.fill   = colorEstadoEV;
 
@@ -693,17 +561,86 @@ function enviarComandos() {
   const colorEstadoBomba = vdf > 0 ? '#00ff9d' : '#ff4444'; 
   pumpIndicator.setAttribute('fill', colorEstadoBomba);
 
-  const bodyData = '"Bomba_Velocidad"=' + vdf + '&"EV_01_Apertura"=' + ev;
+  // ENCODEURICOMPONENT PARA ASEGURAR COMPATIBILIDAD CON S7-1200
+  const bodyData = encodeURIComponent('"Tag_45"') + '=' + vdf + '&' + encodeURIComponent('"Tag_16"') + '=' + ev;
 
   fetch('', {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
     body: bodyData
   }).then(response => {
-    alert(`Comandos enviados.\nVelocidad Bomba: ${vdf}%\nApertura Válvula: ${ev}%`);
+    alert(`Comandos enviados.\nFrecuencia Bomba: ${vdf} Hz\nÁngulo Válvula: ${ev}°`);
   }).catch(err => {
     console.error("Error al enviar comandos", err);
     setConnectionStatus(false);
+  });
+}
+
+// ─── LÓGICA DE CONTROL REMOTO Y WATCHDOG (TOGGLE ÚNICO) ───
+let modoRemotoActivo = false;
+let watchdogInterval = null;
+
+function toggleModoRemoto() {
+  modoRemotoActivo = !modoRemotoActivo;
+  const btn = document.getElementById('btn-remoto');
+  
+  // Si modoRemotoActivo es verdadero, enviamos 1. Si es falso, enviamos 0.
+  const valorPLC = modoRemotoActivo ? 1 : 0;
+  
+  // Cambios visuales en el botón
+  if (modoRemotoActivo) {
+    btn.textContent = "LIBERAR CONTROL REMOTO";
+    btn.style.color = "var(--danger)";
+    btn.style.borderColor = "var(--danger)";
+    btn.style.background = "rgba(255,68,68,0.08)";
+  } else {
+    btn.textContent = "TOMAR CONTROL REMOTO";
+    btn.style.color = "var(--warn)";
+    btn.style.borderColor = "var(--warn)";
+    btn.style.background = "rgba(255,182,39,0.08)";
+  }
+
+  // ENCODEURICOMPONENT VITAL POR EL ESPACIO EN "Control Remoto"
+  const bodyData = encodeURIComponent('"Control Remoto"') + '=' + valorPLC; 
+
+  fetch('', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: bodyData
+  }).then(response => {
+    console.log("Modo remoto actualizado a: " + valorPLC);
+    
+    // Gestión del Watchdog (Latido)
+    if (modoRemotoActivo) {
+      if (watchdogInterval) clearInterval(watchdogInterval);
+      enviarLatido(); // Enviar el primer latido inmediatamente
+      watchdogInterval = setInterval(enviarLatido, 3000);
+    } else {
+      if (watchdogInterval) {
+        clearInterval(watchdogInterval);
+        watchdogInterval = null;
+      }
+    }
+  }).catch(err => {
+    console.error("Error al cambiar modo remoto", err);
+    // Revertir estado si falla la comunicación
+    modoRemotoActivo = !modoRemotoActivo;
+    alert("Error de comunicación. No se pudo cambiar el modo.");
+  });
+}
+
+function enviarLatido() {
+  // Enviar un 1 constante a la variable "Latido"
+  const bodyData = encodeURIComponent('"Latido"') + '=1';
+  
+  fetch('', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: bodyData
+  }).then(response => {
+    console.log("Latido enviado al PLC (Watchdog)");
+  }).catch(err => {
+    console.error("Fallo al enviar latido", err);
   });
 }
 
